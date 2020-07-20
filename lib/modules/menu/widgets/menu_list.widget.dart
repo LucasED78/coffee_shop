@@ -14,7 +14,7 @@ class MenuList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       itemCount: coffees.length,
       itemBuilder: (_, index) {
         return MenuListTile(
@@ -25,6 +25,7 @@ class MenuList extends StatelessWidget {
           onTap: () => Navigator.of(context).pushNamed("/coffee", arguments: coffees[index])
         );
       },
+      separatorBuilder: (_, __) => Divider(),
     );
   }
 }
